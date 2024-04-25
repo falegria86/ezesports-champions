@@ -2,6 +2,7 @@
 
 import { ChampionsContext } from "@/context";
 import { ChampionData, ChampionsAPI } from "@/interface/ChampionInterface";
+import { downloadAllImages } from "@/utils/DownloadImgs";
 import { Button, MenuItem, Select, TextField } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 
@@ -15,19 +16,19 @@ export const ChampionsSelect = () => {
     const [modo, setModo] = useState('row');
 
     const [blueSelectedChampion, setBlueSelectedChampion] = useState({
-        player1: "Aatrox",
-        player2: "Aatrox",
-        player3: "Aatrox",
-        player4: "Aatrox",
-        player5: "Aatrox",
+        player1: "Black",
+        player2: "Black",
+        player3: "Black",
+        player4: "Black",
+        player5: "Black",
     });
 
     const [redSelectedChampion, setRedSelectedChampion] = useState({
-        player1: "Aatrox",
-        player2: "Aatrox",
-        player3: "Aatrox",
-        player4: "Aatrox",
-        player5: "Aatrox",
+        player1: "Black",
+        player2: "Black",
+        player3: "Black",
+        player4: "Black",
+        player5: "Black",
     });
 
     const getChampionsData = async () => {
@@ -48,6 +49,24 @@ export const ChampionsSelect = () => {
         }
     };
 
+    const handleReset = () => {
+        setBlueSelectedChampion({
+            player1: "Black",
+            player2: "Black",
+            player3: "Black",
+            player4: "Black",
+            player5: "Black",
+        });
+
+        setRedSelectedChampion({
+            player1: "Black",
+            player2: "Black",
+            player3: "Black",
+            player4: "Black",
+            player5: "Black",
+        });
+    }
+
 
     useEffect(() => {
         getChampionsData();
@@ -60,11 +79,11 @@ export const ChampionsSelect = () => {
         <>
             <div className="flex gap-1 mt-5">
                 {/* Selects */}
-                <div>
+                <div className="w-[150px]">
                     {/* ------------------------------- Equipo Azul ------------------------------ */}
                     <div className="w-[150px] mr-2">
                         <h3 className="text-blue-500 font-bold">Equipo Azul</h3>
-                        <div className="space-y-2">
+                        <div>
                             <label className="text-blue-500 text-[10px] font-semibold">Player 1</label>
                             <div>
                                 <Select
@@ -76,6 +95,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -94,6 +114,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -112,6 +133,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -130,6 +152,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -148,6 +171,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -159,7 +183,7 @@ export const ChampionsSelect = () => {
                     {/* ------------------------------- Equipo Rojo ------------------------------ */}
                     <div className="w-[150px] mr-2 mt-5">
                         <h3 className="text-red-500 font-bold">Equipo Rojo</h3>
-                        <div className="space-y-2">
+                        <div>
                             <label className="text-red-500 text-[10px] font-semibold">Player 1</label>
                             <div>
                                 <Select
@@ -171,6 +195,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -189,6 +214,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -207,6 +233,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -225,6 +252,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -243,6 +271,7 @@ export const ChampionsSelect = () => {
                                     size="small"
                                     className="w-full"
                                 >
+                                    <MenuItem value="Black"><em>Reset</em></MenuItem>
                                     {champions.map((champion, index) => (
                                         <MenuItem key={index} value={champion.id}>{champion.id}</MenuItem>
                                     ))}
@@ -259,16 +288,33 @@ export const ChampionsSelect = () => {
                         }
                     }}
                         variant="contained"
-                        className="mt-4"
+                        className="mt-4 w-full"
                     >
                         Cambiar modo
                     </Button>
+
+                    <Button
+                        onClick={handleReset}
+                        variant="contained"
+                        color="warning"
+                        className="mt-2 w-full"
+                    >
+                        Reset
+                    </Button>
+
+                    {/* <Button
+                        onClick={() => downloadAllImages(champions)}
+                        variant="contained"
+                        color="info"
+                    >
+                        Descargar
+                    </Button> */}
                 </div>
 
-                {/* Champions render */}
+                {/* ------------------------------- Champions Render ------------------------------ */}
                 <div
                     className={`${modo === 'fila' ? 'flex' : 'block'}
-            cursor-none overflow-hidden w-full h-[810px] border border-gray-500`}
+            cursor-none overflow-hidden w-full h-[810px] border border-gray-500 bg-black`}
                 >
 
                     {/* ------------------------------- Equipo Azul ------------------------------ */}
@@ -331,7 +377,6 @@ export const ChampionsSelect = () => {
                         />
                     </div>
                 </div>
-                {/* <button onClick={downloadAllImages}>Download images</button> */}
             </div>
         </>
     )
