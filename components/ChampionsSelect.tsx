@@ -74,7 +74,7 @@ export const ChampionsSelect = () => {
 
     const { alto: height, ancho } = useContext(ChampionsContext);
     const width = ancho / 5;
-
+    console.log(`/imgs/loading/${blueSelectedChampion.player1}.mp4`);
     return (
         <>
             <div className="flex gap-1 mt-5">
