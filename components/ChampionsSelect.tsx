@@ -70,10 +70,10 @@ export const ChampionsSelect = () => {
     }
 
     const handleKeyPress = (event: any) => {
-        if (event.ctrlKey && event.altKey && event.key === 'm') {
+        if (event.ctrlKey && event.key === 'p') {
             setImgMode(`https://ddragon.leagueoflegends.com/cdn/14.4.1/img/champion/`);
             setImgExtension('.png');
-        } else if (event.ctrlKey && event.altKey && event.key === 'l') {
+        } else if (event.ctrlKey && event.key === 'l') {
             setImgMode(`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/`);
             setImgExtension('_0.jpg');
         }
