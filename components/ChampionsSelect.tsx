@@ -71,7 +71,7 @@ export const ChampionsSelect = () => {
 
     const handleKeyPress = (event: any) => {
         if (event.ctrlKey && event.altKey && event.key === 'p') {
-            setImgMode(`https://ddragon.leagueoflegends.com/cdn/14.4.1/img/champion/`);
+            setImgMode(`https://ddragon.leagueoflegends.com/cdn/14.9.1/img/champion/`);
             setImgExtension('.png');
         } else if (event.ctrlKey && event.altKey && event.key === 'l') {
             setImgMode(`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/`);
