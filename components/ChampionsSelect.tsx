@@ -15,6 +15,8 @@ export const ChampionsSelect = () => {
     const [champions, setChampions] = useState<Champion[]>([]);
     const [modo, setModo] = useState('row');
 
+    const imgMode = '/imgs/muebles-players/';
+
     const [blueSelectedChampion, setBlueSelectedChampion] = useState({
         player1: "Black",
         player2: "Black",
@@ -74,7 +76,6 @@ export const ChampionsSelect = () => {
 
     const { alto: height, ancho } = useContext(ChampionsContext);
     const width = ancho / 5;
-    console.log(`/imgs/loading/${blueSelectedChampion.player1}.mp4`);
     return (
         <>
             <div className="flex gap-1 mt-5">
@@ -320,28 +321,28 @@ export const ChampionsSelect = () => {
                     {/* ------------------------------- Equipo Azul ------------------------------ */}
                     <div className="flex max-h-[400px] overflow-hidden">
                         <img
-                            src={`/imgs/loading/${blueSelectedChampion.player1}.png`}
+                            src={`${imgMode}${blueSelectedChampion.player1}.png`}
                             alt={blueSelectedChampion.player1}
                             style={{ width: `${width}px`, height: `${height}px` }}
                             className="glitch"
                         />
                         <img
-                            src={`/imgs/loading/${blueSelectedChampion.player2}.png`}
+                            src={`${imgMode}${blueSelectedChampion.player2}.png`}
                             alt={blueSelectedChampion.player2}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`/imgs/loading/${blueSelectedChampion.player3}.png`}
+                            src={`${imgMode}${blueSelectedChampion.player3}.png`}
                             alt={blueSelectedChampion.player3}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`/imgs/loading/${blueSelectedChampion.player4}.png`}
+                            src={`${imgMode}${blueSelectedChampion.player4}.png`}
                             alt={blueSelectedChampion.player4}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`/imgs/loading/${blueSelectedChampion.player5}.png`}
+                            src={`${imgMode}${blueSelectedChampion.player5}.png`}
                             alt={blueSelectedChampion.player5}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
@@ -350,28 +351,28 @@ export const ChampionsSelect = () => {
                     {/* ------------------------------- Equipo Rojo ------------------------------ */}
                     <div className="flex max-h-[400px] overflow-hidden">
                         <img
-                            src={`/imgs/loading/${redSelectedChampion.player1}.png`}
+                            src={`${imgMode}${redSelectedChampion.player1}.png`}
                             alt={redSelectedChampion.player1}
                             style={{ width: `${width}px`, height: `${height}px` }}
                             className="glitch"
                         />
                         <img
-                            src={`/imgs/loading/${redSelectedChampion.player2}.png`}
+                            src={`${imgMode}${redSelectedChampion.player2}.png`}
                             alt={redSelectedChampion.player2}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`/imgs/loading/${redSelectedChampion.player3}.png`}
+                            src={`${imgMode}${redSelectedChampion.player3}.png`}
                             alt={redSelectedChampion.player3}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`/imgs/loading/${redSelectedChampion.player4}.png`}
+                            src={`${imgMode}${redSelectedChampion.player4}.png`}
                             alt={redSelectedChampion.player4}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`/imgs/loading/${redSelectedChampion.player5}.png`}
+                            src={`${imgMode}${redSelectedChampion.player5}.png`}
                             alt={redSelectedChampion.player5}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
