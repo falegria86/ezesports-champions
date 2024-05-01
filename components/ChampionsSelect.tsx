@@ -337,7 +337,6 @@ export const ChampionsSelect = () => {
                     className={`${modo === 'fila' ? 'flex' : 'block'}
             cursor-none overflow-hidden w-full h-[810px] border border-gray-500 bg-black`}
                 >
-
                     {/* ------------------------------- Equipo Azul ------------------------------ */}
                     <div className="flex max-h-[400px] overflow-hidden">
                         <img
