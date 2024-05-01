@@ -14,8 +14,8 @@ interface Champion {
 export const ChampionsSelect = () => {
     const [champions, setChampions] = useState<Champion[]>([]);
     const [modo, setModo] = useState('row');
-
-    const imgMode = '/imgs/muebles-players/';
+    const [imgMode, setImgMode] = useState(`https://ddragon.leagueoflegends.com/cdn/14.4.1/img/champion/`);
+    const [imgExtension, setImgExtension] = useState(`.png`);
 
     const [blueSelectedChampion, setBlueSelectedChampion] = useState({
         player1: "Black",
@@ -68,6 +68,24 @@ export const ChampionsSelect = () => {
             player5: "Black",
         });
     }
+
+    const handleKeyPress = (event: any) => {
+        if (event.ctrlKey && event.altKey && event.key === 'm') {
+            setImgMode(`https://ddragon.leagueoflegends.com/cdn/14.4.1/img/champion/`);
+            setImgExtension('.png');
+        } else if (event.ctrlKey && event.altKey && event.key === 'l') {
+            setImgMode(`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/`);
+            setImgExtension('_0.jpg');
+        }
+    }
+
+    useEffect(() => {
+        document.addEventListener('keydown', handleKeyPress);
+
+        return () => {
+            document.removeEventListener('keydown', handleKeyPress)
+        }
+    }, []);
 
 
     useEffect(() => {
@@ -290,6 +308,7 @@ export const ChampionsSelect = () => {
                     }}
                         variant="contained"
                         className="mt-4 w-full"
+                        size="small"
                     >
                         Cambiar modo
                     </Button>
@@ -299,6 +318,7 @@ export const ChampionsSelect = () => {
                         variant="contained"
                         color="warning"
                         className="mt-2 w-full"
+                        size="small"
                     >
                         Reset
                     </Button>
@@ -321,28 +341,27 @@ export const ChampionsSelect = () => {
                     {/* ------------------------------- Equipo Azul ------------------------------ */}
                     <div className="flex max-h-[400px] overflow-hidden">
                         <img
-                            src={`${imgMode}${blueSelectedChampion.player1}.png`}
+                            src={blueSelectedChampion.player1 !== 'Black' ? `${imgMode}${blueSelectedChampion.player1}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={blueSelectedChampion.player1}
                             style={{ width: `${width}px`, height: `${height}px` }}
-                            className="glitch"
                         />
                         <img
-                            src={`${imgMode}${blueSelectedChampion.player2}.png`}
+                            src={blueSelectedChampion.player2 !== 'Black' ? `${imgMode}${blueSelectedChampion.player2}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={blueSelectedChampion.player2}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`${imgMode}${blueSelectedChampion.player3}.png`}
+                            src={blueSelectedChampion.player3 !== 'Black' ? `${imgMode}${blueSelectedChampion.player3}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={blueSelectedChampion.player3}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`${imgMode}${blueSelectedChampion.player4}.png`}
+                            src={blueSelectedChampion.player4 !== 'Black' ? `${imgMode}${blueSelectedChampion.player4}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={blueSelectedChampion.player4}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`${imgMode}${blueSelectedChampion.player5}.png`}
+                            src={blueSelectedChampion.player5 !== 'Black' ? `${imgMode}${blueSelectedChampion.player5}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={blueSelectedChampion.player5}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
@@ -351,28 +370,27 @@ export const ChampionsSelect = () => {
                     {/* ------------------------------- Equipo Rojo ------------------------------ */}
                     <div className="flex max-h-[400px] overflow-hidden">
                         <img
-                            src={`${imgMode}${redSelectedChampion.player1}.png`}
+                            src={redSelectedChampion.player1 !== 'Black' ? `${imgMode}${redSelectedChampion.player1}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={redSelectedChampion.player1}
                             style={{ width: `${width}px`, height: `${height}px` }}
-                            className="glitch"
                         />
                         <img
-                            src={`${imgMode}${redSelectedChampion.player2}.png`}
+                            src={redSelectedChampion.player2 !== 'Black' ? `${imgMode}${redSelectedChampion.player2}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={redSelectedChampion.player2}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`${imgMode}${redSelectedChampion.player3}.png`}
+                            src={redSelectedChampion.player3 !== 'Black' ? `${imgMode}${redSelectedChampion.player3}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={redSelectedChampion.player3}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`${imgMode}${redSelectedChampion.player4}.png`}
+                            src={redSelectedChampion.player4 !== 'Black' ? `${imgMode}${redSelectedChampion.player4}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={redSelectedChampion.player4}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
                         <img
-                            src={`${imgMode}${redSelectedChampion.player5}.png`}
+                            src={redSelectedChampion.player5 !== 'Black' ? `${imgMode}${redSelectedChampion.player5}${imgExtension}` : '/imgs/muebles-players/Black.png'}
                             alt={redSelectedChampion.player5}
                             style={{ width: `${width}px`, height: `${height}px` }}
                         />
