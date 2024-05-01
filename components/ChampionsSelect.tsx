@@ -35,9 +35,9 @@ export const ChampionsSelect = () => {
 
     const getChampionsData = async () => {
         try {
-            const res = await fetch(`https://ddragon.leagueoflegends.com/cdn/14.4.1/data/en_US/champion.json`);
+            const res = await fetch(`https://ddragon.leagueoflegends.com/cdn/14.9.1/data/en_US/champion.json`);
             const data: ChampionsAPI = await res.json();
-
+console.log(data)
             const championsArray = Object.values(data.data).map((champion: ChampionData) => {
                 return {
                     id: champion.id,
